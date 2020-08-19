@@ -25,4 +25,4 @@ Start-AzVM -Name $VMName -ResourceGroupName $ResourceGroupName
 
 $tags = @{Localidade="Floripa-SC"}
 
-Set-AzResource -ResourceGroupName $ResourceGroupName -Name $VMName -ResourceType "Microsoft.Compute/VirtualMachines" -Tag $tags
+Set-AzResource -ResourceGroupName $ResourceGroupName -Name $VMName -ResourceType "Microsoft.Compute/VirtualMachines" -Tag $tags -Force
