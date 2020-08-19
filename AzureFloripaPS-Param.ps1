@@ -21,6 +21,10 @@ while(!($connectionResult) -and ($logonAttempt -le 10))
 # Iniciando a VM, utilizando as variáveis com os parâmetros que foram inseridos
 Start-AzVM -Name $VMName -ResourceGroupName $ResourceGroupName
 
+# Adicionando Tags de localidade #
+
+Write-Output "Adicionando Tags de localidade na VM"
+
 $tags = @{Localidade="Floripa-SC"}
 
 Set-AzResource -ResourceGroupName $ResourceGroupName -Name $VMName -ResourceType "Microsoft.Compute/VirtualMachines" -Tag $tags -Force
